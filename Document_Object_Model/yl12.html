@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ylesanded.js" type="text/javascript"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ostukorv</h1>
+    <ul id="ostukorv">
+        <!-- Siia lisatakse ostukorvi sisu JavaScripti abil -->
+    </ul>
+    <p id="kogusumma"></p>
+
+    <script>
+        const ostukorv = {
+            tooted: [
+                { nimi: 'Piim', hind: 3.60, kogus: 2 },
+                { nimi: 'Leib', hind: 2.00, kogus: 1 },
+                { nimi: 'Munad', hind: 1.50, kogus: 6 },
+                { nimi: 'Juust', hind: 4.20, kogus: 1 },
+                { nimi: 'Tomatid', hind: 2.30, kogus: 3 },
+            ]
+        };
+
+        // Funktsioon ostukorvi sisu lisamiseks HTML-le
+        function lisaOstukorvSisu() {
+            const ostukorviElement = document.getElementById("ostukorv");
+            let kogusumma = 0;
+
+            for (const toode of ostukorv.tooted) {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${toode.nimi} - Hind: ${toode.hind} EUR - Kogus: ${toode.kogus}`;
+                ostukorviElement.appendChild(listItem);
+                kogusumma += toode.hind * toode.kogus;
+            }
+
+            const kogusummaElement = document.getElementById("kogusumma");
+            kogusummaElement.textContent = `Ostukorvi kogusumma: ${kogusumma.toFixed(2)} EUR`;
+        }
+
+        // Lisa ostukorvi sisu HTML-le
+        lisaOstukorvSisu();
+    </script>
+</body>
+</html>
