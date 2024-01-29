@@ -1,16 +1,14 @@
 //Kaspar Tõnisson
 //11.10.23
 
-// Funktsioon, mis väljastab sinu nime ilma argumendita
+// Funktsioon, mis väljastab nime ilma argumendita
 
-// Klassikaline funktsioon
 function minuNimi() {
-    console.log("Sinu nimi siin");
+    console.log("Kaspar");
   }
   
-  // Noolfunktsioon
   const minuNimiNool = () => {
-    console.log("Sinu nimi siin");
+    console.log("Kaspar");
   };
   
   // Funktsioon, mis kuvab praeguse kuupäeva ja kuu eesti keeles
@@ -81,26 +79,21 @@ function minuNimi() {
 
 
 
-  // Toote objekt
 const toode = {
     nimetus: "Piim",
     hind: 3.60,
     kogus: 2,
-    // Meetod toote koguhinna arvutamiseks
     koguHind: function () {
       return this.hind * this.kogus;
     },
-    // Meetod toote koguse muutmiseks
     muudaKogust: function (uusKogus) {
       this.kogus = uusKogus;
     },
-    // Meetod objekti sisu kuvamiseks
     kuvaSisu: function () {
       console.log(`${this.nimetus} - ${this.hind} EUR - Kogus: ${this.kogus}`);
     },
   };
   
-  // Ostukorvi objekt
   const ostukorv = {
     tooted: [
       { nimi: 'Piim', hind: 3.60, kogus: 2 },
@@ -109,13 +102,11 @@ const toode = {
       { nimi: 'Juust', hind: 4.20, kogus: 1 },
       { nimi: 'Tomatid', hind: 2.30, kogus: 3 },
     ],
-    // Meetod kogu ostukorvi sisu kuvamiseks
     kuvaSisu: function () {
       for (const toode of this.tooted) {
         console.log(`${toode.nimi} - ${toode.hind} EUR - Kogus: ${toode.kogus}`);
       }
     },
-    // Meetod ostukorvi summa arvutamiseks
     koguSumma: function () {
       let summa = 0;
       for (const toode of this.tooted) {
@@ -123,13 +114,11 @@ const toode = {
       }
       return summa;
     },
-    // Meetod uute toodete lisamiseks ostukorvi
     lisaToode: function (nimi, hind, kogus) {
       this.tooted.push({ nimi, hind, kogus });
     },
   };
   
-  // Kasutame meetodeid ja kuvame tulemused konsoolis
   console.log("Toote omadused:");
   toode.kuvaSisu();
   console.log("Toote koguhind:", toode.koguHind());
@@ -154,17 +143,14 @@ const toode = {
     { nimi: "Margus Mustikas", isikukood: "49807010346" },
     { nimi: "Jaak Järve", isikukood: "39504234985" },
     { nimi: "Kadi Kask", isikukood: "39811136789" },
-    // Lisa kontrollimiseks oma nimi ja isikukood
   ];
   
   const opilased = [
     { nimi: "Anna", tulemused: [4.5, 4.8, 4.6] },
     { nimi: "Mart", tulemused: [5.2, 5.1, 5.4] },
     { nimi: "Kati", tulemused: [4.9, 5.0, 4.7] },
-    // ...
   ];
   
-  // Funktsioon, mis teeb nimed korda ja loob e-kirjad
   function teeNimedKordaJaLooEmail(nimed1) {
     return nimed1.map(nimi => {
       const osad = nimi.split(" ");
@@ -178,7 +164,6 @@ const toode = {
     });
   }
 
-// Funktsioon sünniaja ja vanuse leidmiseks
 function leiaSunniaegJaVanus(isikukood) {
   const aasta = "19" + isikukood.substr(1, 2);
   const kuu = isikukood.substr(3, 2);
@@ -189,7 +174,6 @@ function leiaSunniaegJaVanus(isikukood) {
   return { sünniaeg: sünniaeg.toDateString(), vanus: vanus };
 }
 
-// Funktsioon parima ja keskmise tulemuse leidmiseks
 function leiaParimJaKeskmine(tulemused) {
   const parim = Math.max(...tulemused);
   const keskmine = tulemused.reduce((summa, tulemus) => summa + tulemus, 0) / tulemused.length;
