@@ -9,7 +9,7 @@
 <body>
     <h1>Ostukorv</h1>
     <ul id="ostukorv">
-        <!-- Siia lisatakse ostukorvi sisu JavaScripti abil -->
+        
     </ul>
     <p id="kogusumma"></p>
 
@@ -24,7 +24,6 @@
             ]
         };
 
-        // Funktsioon ostukorvi sisu lisamiseks HTML-le
         function lisaOstukorvSisu() {
             const ostukorviElement = document.getElementById("ostukorv");
             let kogusumma = 0;
@@ -40,7 +39,6 @@
             kogusummaElement.textContent = `Ostukorvi kogusumma: ${kogusumma.toFixed(2)} EUR`;
         }
 
-        // Lisa ostukorvi sisu HTML-le
         lisaOstukorvSisu();
     </script>
 </body>
