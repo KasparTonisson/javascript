@@ -1,8 +1,8 @@
 //Kaspar Tõnisson
-//21.09.23
 
 
-let temperatuur = 20; // Asendage see väärtus soovitud temperatuuriga
+
+let temperatuur = 20;
 
 if (temperatuur > 25) {
     console.log("Väga kuum ilm!");
@@ -43,10 +43,8 @@ if (piletitüüp === "taispilet") {
 
 console.log(`Pileti hind on ${hind} eurot.`);
 
-// Küsime kasutajalt sisestatud numbri
 let number = parseInt(prompt("Sisestage number:"));
 
-// Kasutame switch-case, et kontrollida numbri väärtust
 switch (true) {
   case number > 0:
     console.log("Sisestatud number on positiivne.");
@@ -59,10 +57,8 @@ switch (true) {
     break;
 }
 
-// Küsime kasutajalt broneeringu arvu
 let broneeringuArv = parseInt(prompt("Sisestage broneeringu arv:"));
 
-// Kasutame switch-case, et määrata laua suurus vastavalt broneeringule
 switch (true) {
   case broneeringuArv >= 1 && broneeringuArv <= 2:
     console.log("Valitud on laud kahele inimesele.");
@@ -89,7 +85,6 @@ for (let i = 0; i < products.length; i++) {
 
 const temperatures = [
   [5, 8, 12, 10, 7, 9, 11, 14, 16, 13, 10, 6, 4, 3, 2, 4, 6, 8, 10, 12, 15, 17, 18, 16, 13, 10],
-  // Lisa siia ülejäänud kuude temperatuurimõõtmised
 ];
 
 const months = "Jaanuar, Veebruar, Märts, Aprill, Mai, Juuni, Juuli, August, September, Oktoober, November, Detsember";
@@ -106,7 +101,6 @@ for (let i = 0; i < temperatures.length; i++) {
   console.log(`Kuu ${monthNames[i]}: Kõrgeim temperatuur - ${highest}°C, Madalaim temperatuur - ${lowest}°C`);
 }
 
-// Leia kuu, kus oli kõige kõrgem ja kõige madalam temperatuur
 const highestIndex = highestTemperatures.indexOf(Math.max(...highestTemperatures));
 const lowestIndex = lowestTemperatures.indexOf(Math.min(...lowestTemperatures));
 
